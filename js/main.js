@@ -1,35 +1,20 @@
-'use strict';
-
-let fizz_element = document.getElementById('fizz');
-let buzz_element = document.getElementById('buzz');
 const btn = document.getElementById('submit');
 const output = document.getElementById('output');
 
 btn.addEventListener('click', function(e) {
-  let html = '';
-  let fizz = parseInt(fizz_element.value, 10);
-  let buzz = parseInt(buzz_element.value, 10);
-  if(Number.isInteger(fizz) && Number.isInteger(buzz) ) {
-    let fizzSum = fizz;
-    let buzzSum = buzz;
+  'use strict';
+  let html;
+  const fizz = parseInt(document.getElementById('fizz').value, 10);
+  const buzz = parseInt(document.getElementById('buzz').value, 10);
 
-    for(let i = 0; i < 100; i++) {
-      i = Math.min(fizzSum, buzzSum);
+  if(Number.isInteger(fizz) && Number.isInteger(buzz) ) {
+    for(let i = 1; i < 100; i++) {
       if (i % fizz === 0 && i % buzz === 0) {
         html += `FizzBuzz ${i}<br>`;
       } else if(i % fizz === 0) {
         html += `Fizz ${i}<br>`;
-      } else {
+      } else if(i % buzz === 0) {
         html += `Buzz ${i}<br>`;
-      }
-
-      if(fizzSum < buzzSum) {
-        fizzSum += fizz;
-      } else if(fizzSum > buzzSum) {
-        buzzSum += buzz;
-      } else {
-        fizzSum += fizz;
-        buzzSum += buzz;
       }
     }
   } else {
