@@ -3,7 +3,7 @@ const output = document.getElementById('output');
 
 btn.addEventListener('click', function(e) {
   'use strict';
-  let html;
+  let html= '';
   const fizz = parseInt(document.getElementById('fizz').value, 10);
   const buzz = parseInt(document.getElementById('buzz').value, 10);
 
